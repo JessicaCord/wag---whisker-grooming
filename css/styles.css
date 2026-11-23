@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	font-family: "Lato", sans-serif;
+	font-family: "Fredoka", sans-serif;
 	background-color: #eef6f5;
 	color: #14313a;
 	text-align: center;
@@ -44,7 +44,7 @@ nav ul {
 
 img {
 	height: 10rem;
-	width: 20rem;
+	width: min(20rem, 100%);
 	border-radius: 10px;
 }
 
@@ -52,11 +52,12 @@ img {
 	color: #1f8a8a;
 }
 
-.Services {
+.services {
 	display: flex;
 	justify-content: center;
 	gap: 15px;
 	margin-bottom: 50px;
+	flex-wrap: wrap;
 }
 
 .card {
@@ -97,4 +98,40 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	padding: 0 25px;
+}
+
+
+/* Tablet */
+@media (max-width: 800px) {
+  .tags-wrapper {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .card {
+    width: auto;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
 }
